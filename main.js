@@ -6,7 +6,6 @@ const data = Array(43)
     }.jpg`;
   });
 
-let index = 0;
 const imageContainer = document.querySelector(".image-container");
 const btnNext = document.querySelector(".triangle-top");
 const btnPrev = document.querySelector(".triangle-bottom");
@@ -17,7 +16,10 @@ const viewer = new PANOLENS.Viewer({
   autoRotateSpeed: 0.3,
   controlBar: false,
 });
+
+let index = 0;
 let timer;
+const TIME_DEBOUNCE = 300;
 
 load();
 
@@ -47,9 +49,9 @@ function load() {
   if (timer) {
     clearTimeout(timer);
   }
-  const panoramaImage = new PANOLENS.ImagePanorama(data[index]);
   timer = setTimeout(() => {
+    const panoramaImage = new PANOLENS.ImagePanorama(data[index]);
     viewer.dispose();
     viewer.add(panoramaImage);
-  }, 100);
+  }, TIME_DEBOUNCE);
 }
