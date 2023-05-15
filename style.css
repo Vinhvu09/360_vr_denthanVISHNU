@@ -32,34 +32,38 @@ body {
   pointer-events: none;
 }
 
-.long-arrow-right,
-.long-arrow-left {
-  display: block;
-  width: 25px;
-  height: 25px;
-  border-top: 3px solid #fff;
-  border-left: 3px solid #fff;
-  margin: 0 11rem;
-}
-.arrow-right,
-.long-arrow-right {
-  transform: rotate(135deg);
+.btn-group {
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 11rem;
 }
 
-.arrow-left,
-.long-arrow-left {
-  transform: rotate(-45deg);
+@media screen and (max-width: 600px) {
+  .btn-group {
+    bottom: 2rem;
+  }
 }
-.long-arrow-right::after,
-.long-arrow-left::after {
-  content: "";
-  display: block;
-  width: 3px;
-  height: 45px;
-  background-color: #fff;
-  transform: rotate(-45deg) translate(15px, 4px);
-  left: 0;
-  top: 0;
+
+.triangle-top,
+.triangle-bottom {
+  width: 0;
+  height: 0;
+  margin: 30px auto;
+}
+
+.triangle-top,
+.triangle-bottom {
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+}
+
+.triangle-top {
+  border-bottom: 40px solid rgba(255, 255, 255, 0.384);
+}
+.triangle-bottom {
+  border-top: 40px solid rgba(255, 255, 255, 0.384);
 }
 
 .hide {
