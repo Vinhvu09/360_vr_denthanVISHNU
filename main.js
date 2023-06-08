@@ -1,7 +1,7 @@
-const data = Array(43)
+const data = Array(32)
   .fill(0)
   .map((x, idx) => {
-    return `images/khu den tho- Setup 0${
+    return `images/Den Than VISHNU- Setup 0${
       idx + 1 > 9 ? idx + 1 : `0${idx + 1}`
     }.jpg`;
   });
